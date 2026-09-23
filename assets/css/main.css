@@ -1720,3 +1720,30 @@ input, select, textarea {
   transform: translateY(0) scale(1);
   opacity: 1;
 }
+
+/* Two images side by side (Honors & Awards) */
+.image-pair {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	margin: 2.5rem 0;
+}
+
+	.image-pair .image.main {
+		margin: 0;
+	}
+
+	.image-pair .image.main img {
+		display: block;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.image-pair {
+			grid-template-columns: 1fr;
+			margin: 1.5rem 0;
+		}
+
+	}
