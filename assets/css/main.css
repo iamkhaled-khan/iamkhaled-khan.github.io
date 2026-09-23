@@ -1358,12 +1358,14 @@ input, select, textarea {
 
 				#header nav ul li a {
 					display: block;
-					min-width: 7.5rem;
+					min-width: 6.5rem;
 					height: 2.75rem;
 					line-height: 2.75rem;
-					padding: 0 1.25rem 0 1.45rem;
+					padding: 0 1rem 0 1.15rem;
+					text-align: center;
+					white-space: nowrap;
 					text-transform: uppercase;
-					letter-spacing: 0.2rem;
+					letter-spacing: 0.15rem;
 					font-size: 0.8rem;
 					border-bottom: 0;
 				}
@@ -1375,21 +1377,6 @@ input, select, textarea {
 					#header nav ul li a:active {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
-
-		#header nav.use-middle:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: calc(50% - 1px);
-			width: 1px;
-			height: 100%;
-			background: #ffffff;
-		}
-
-		#header nav.use-middle ul li.is-middle {
-			border-left: 0;
-		}
 
 		body.is-article-visible #header {
 			-moz-transform: scale(0.95);
@@ -1420,6 +1407,37 @@ input, select, textarea {
 				padding-bottom: 0;
 				opacity: 0;
 			}
+
+		@media screen and (max-width: 980px) {
+
+			#header nav ul {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				max-width: 100%;
+			}
+
+				#header nav ul li:nth-child(3n+1) {
+					border-left: 0;
+				}
+
+				#header nav ul li:nth-child(n+4) {
+					border-top: solid 1px #ffffff;
+				}
+
+				#header nav ul li a {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					height: 100%;
+					min-height: 2.75rem;
+					min-width: 0;
+					line-height: 1.5;
+					padding: 0.6rem 0.75rem;
+					white-space: normal;
+					letter-spacing: 0.1rem;
+				}
+
+		}
 
 		@media screen and (max-width: 980px) {
 
@@ -1495,9 +1513,14 @@ input, select, textarea {
 							width: 100%;
 						}
 
-				#header nav.use-middle:after {
-					display: none;
+				#header nav ul {
+					grid-template-columns: 1fr;
 				}
+
+					#header nav ul li a {
+						padding: 0 1rem;
+						white-space: nowrap;
+					}
 
 		}
 
