@@ -54,16 +54,10 @@
 		}
 
 	// Nav.
-		var $nav = $header.children('nav'),
-			$nav_li = $nav.find('li');
-
-		// Add "middle" alignment classes if we're dealing with an even number of items.
-			if ($nav_li.length % 2 == 0) {
-
-				$nav.addClass('use-middle');
-				$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
-
-			}
+		// The original template drew a centre divider (".use-middle") when the nav had an
+		// even number of items. With 6 labels of different lengths that divider would cut
+		// through a label, so it is intentionally no longer applied.
+		var $nav = $header.children('nav');
 
 	// Main.
 		var	delay = 325,
